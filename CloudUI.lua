@@ -146,7 +146,7 @@ function Cloud:ToggleUI()
     end
 end
 
-function Cloud.CreateLib(kavName, themeList)
+function Cloud.CreateLib(CloudName, themeList)
     if not themeList then
         themeList = themes
     end
@@ -184,10 +184,10 @@ function Cloud.CreateLib(kavName, themeList)
 
     themeList = themeList or {}
     local selectedTab 
-    kavName = kavName or "Library"
-    table.insert(Cloud, kavName)
+    CloudName = CloudName or "Library"
+    table.insert(Cloud, CloudName)
     for i,v in pairs(game.Players.LocalPlayer.PlayerGui:GetChildren()) do
-        if v:IsA("ScreenGui") and v.Name == kavName then
+        if v:IsA("ScreenGui") and v.Name == CloudName then
             v:Destroy()
         end
     end
@@ -262,7 +262,7 @@ function Cloud.CreateLib(kavName, themeList)
     title.Position = UDim2.new(0.0171428565, 0, 0.344827592, 0)
     title.Size = UDim2.new(0, 204, 0, 8)
     title.Font = Enum.Font.Gotham
-    title.Text = kavName
+    title.Text = CloudName
     title.TextColor3 = Color3.fromRGB(245, 245, 245)
     title.TextSize = 16.000
     title.TextXAlignment = Enum.TextXAlignment.Left
